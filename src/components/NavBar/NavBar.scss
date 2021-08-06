@@ -1,0 +1,106 @@
+.nav {
+  width: 100%;
+  height: 150px;
+}
+
+.nav__head {
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0px 13%;
+}
+
+.nav__head__logo {
+  margin-top: 10px;
+}
+
+.nav__head__srchBar {
+  display: flex;
+  :focus-visible {
+    outline: none;
+  }
+  input {
+    border: none;
+    height: 35px;
+    width: 250px;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    border-bottom-left-radius: 10px;
+  }
+  .nav__head__srchBar__btn {
+    button {
+      height: 35px;
+      width: 80px;
+      background-color: rgb(233, 233, 233);
+      border-bottom-right-radius: 10px;
+    }
+    :hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+.nav__menu {
+  background-color: #000;
+  height: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.nav__menu__main {
+  height: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  li {
+    height: 50px;
+  }
+  a {
+    display: block;
+    height: 50px;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 15px 25px;
+    border-right: 1px solid #fff3;
+  }
+  .nav__menu__main__li--borde {
+    border-left: 1px solid #fff3;
+  }
+  .nav__menu__main__li--subDisp:hover .nav__menu__main__submenu {
+    display: block;
+  }
+  .nav__menu__main__li {
+    :hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}
+
+.nav__menu__main__submenu {
+  display: none;
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  //   border: 1px solid #000;
+  border-top: none;
+  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+  li {
+    height: 40px;
+    :hover {
+      font-weight: bold;
+    }
+  }
+  a {
+    display: block;
+    height: 40px;
+    padding: 10px;
+    color: #777;
+    font-size: 0.9em;
+    text-align: left;
+    border-bottom: 1px solid #0003;
+  }
+}
