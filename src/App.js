@@ -1,16 +1,19 @@
+import React from 'react';
 import './App.scss';
 
 // COMPONENTS
 import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
+
 function App() {
   return (
     <div className="App">
       <NavBar />
       <main className="App-header">
-        <h1>Vinyl Record Store</h1>
-        <p>
-          Tu tienda de música amiga
-        </p>
+        <ItemListContainer 
+         titulo = 'Vinyl Record Store'
+          />
       </main>
     </div>
   );

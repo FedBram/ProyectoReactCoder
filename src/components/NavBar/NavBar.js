@@ -1,4 +1,7 @@
+import React from 'react';
 import "./NavBar.scss"
+import CartWidget from "./../CartWidget/CartWidget"
+
 const NavBar = () => {
     return(
         <header>
@@ -18,7 +21,7 @@ const NavBar = () => {
                 <div className="nav__menu">
                     <ul className="nav__menu__main">
                         <li className="nav__menu__main__li"><a href="" className="nav__menu__main__li--borde">Inicio</a></li>
-                        <li className="nav__menu__main__li nav__menu__main__li--subDisp"><a href="">Vinilo</a>
+                        <li className="nav__menu__main__li nav__menu__main__li--subDisp"><a href="">Vinilos</a>
                             <ul className="nav__menu__main__submenu">
                                 <li><a href="">Rock/Pop</a></li>
                                 <li><a href="">Nacional</a></li>
@@ -28,6 +31,7 @@ const NavBar = () => {
                         <li className="nav__menu__main__li"><a href="">Boxsets</a></li>
                         <li className="nav__menu__main__li"><a href="">Mi cuenta</a></li>                        
                     </ul>
+                    <CartWidget />
                 </div>            
             </nav>
         </header>
