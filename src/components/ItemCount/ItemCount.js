@@ -3,13 +3,13 @@ import "./ItemCount.scss"
 
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [number, setNumber] = React.useState(0);
+    const [number, setNumber] = React.useState(Number(initial));
 
     const incremet = () => {
         if (number < stock){
-            setNumber(number +1)
+            setNumber(number + Number(onAdd) )
         }
     }
     const decrease = () => {
