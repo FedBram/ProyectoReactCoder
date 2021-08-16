@@ -7,8 +7,7 @@ const ItemListContainer = ( {titulo} ) => {
         <h1> {titulo} </h1>
         <ItemCount
            stock = "6"
-           initial = "0"
-           onAdd = "1"
+           initial = '0'
         />
         </div>
     )

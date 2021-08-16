@@ -7,11 +7,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const [number, setNumber] = React.useState(Number(initial));
 
-    const incremet = () => {
+    onAdd = () => {
         if (number < stock){
-            setNumber(number + Number(onAdd) )
+            setNumber(number + 1 )
         }
     }
+
     const decrease = () => {
         if (number > 0) {
             setNumber (number -1)
@@ -23,7 +24,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <div className = "counter">
             <button className = "counter__btnMore" onClick = {decrease}>-</button>            
             <input className = "counter__input" type = "text" placeholder = {number} readOnly="readOnly"/>
-            <button className = "counter__btnLess" onClick = {incremet}>+</button>            
+            <button className = "counter__btnLess" onClick = {onAdd}>+</button>            
         </div>
     )
 }
