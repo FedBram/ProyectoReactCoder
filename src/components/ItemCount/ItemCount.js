@@ -22,9 +22,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return(
         <div className = "counter">
-            <button className = "counter__btnMore" onClick = {decrease}>-</button>            
+            <button className = "counter__btnLess" onClick = {decrease}>-</button>                       
             <input className = "counter__input" type = "text" placeholder = {number} readOnly="readOnly"/>
-            <button className = "counter__btnLess" onClick = {increase}>+</button>    
+            <button className = "counter__btnMore" onClick = {increase}>+</button> 
             <button className = "counter__btnAdd" onClick = {onAdd}>Agregar al carrito</button>        
         </div>
     )

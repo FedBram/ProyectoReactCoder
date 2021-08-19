@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "titulo": "Animals",
+    "artista": "Pink Floyd",
+    "precio": "3000",
+    "img": "https://img.discogs.com/lobz3kQRE_tMyg8NKKebxN9UnXo=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9431705-1480968179-9837.jpeg.jpg",
+    "track":[{"A1": "Pigs On The Wing (Part One)"},
+            {"A2": "Dogs"},
+            {"B1": "Pigs (Three Different Ones)"},
+            {"B2": "Sheep"},
+            {"B3": "Pigs On The Wing (Part Two)"}]
+  },
+  {
+    "id": "2",
+    "titulo": "Discipline",
+    "artista": "King Crimson",
+    "precio": "4300",
+    "img": "https://img.discogs.com/xuGcPLnQ2go8QCkGQAyhNC4VBv4=/fit-in/595x600/filters:strip_icc():format(webp):mode_rgb():quality(90)/discogs-images/R-2184450-1293293058.jpeg.jpg",
+    "track":[{"A": "Elephant Talk  Frame By Frame Matte Kudasai Indiscipline"},
+             {"B": "Thela Hun Ginjeet The Sheltering Sky Discipline"}]
+  },
+  {
+    "id": "3",
+    "titulo": "Ziggy Stardust",
+    "artista": "David Bowie",
+    "precio": "4250",
+    "img": "https://img.discogs.com/BDb-RySLgwbiKVywnpgzylrFYn4=/fit-in/600x605/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-618952-1443451473-7889.jpeg.jpg",
+    "track":[{"A1": "Pigs On The Wing (Part One)"},
+            {"A2": "Dogs"},
+            {"B1": "Pigs (Three Different Ones)"},
+            {"B2": "Sheep"},
+            {"B3": "Pigs On The Wing (Part Two)"}]
+  }
+]
