@@ -4,6 +4,7 @@ import './App.scss';
 // COMPONENTS
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
     <div className="App">
       <NavBar />
       <main className="App-header">
-        <ItemListContainer 
+        {/* <ItemListContainer 
          titulo = 'Vinyl Record Store'
-          />
+          /> */}
+        <ItemDetailContainer />
       </main>
     </div>
   );

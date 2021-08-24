@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin: 50px 15%;
+}
+
+.item__info {
+  width: 440px;
+  text-align: left;
+}
+
+.item__info__track {
+  width: 120px;
+  margin: 10px 0px;
+  h5 {
+    margin-bottom: 10px;
+  }
+  span {
+    display: block;
+    margin-bottom: 5px;
+  }
+}

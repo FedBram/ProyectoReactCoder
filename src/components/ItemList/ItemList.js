@@ -4,7 +4,7 @@ import './ItemList.scss'
 import Item from '../Item/Item'
 
 
-const imtemList = (({onAdd, data}) =>{
+const ItemList = (({onAdd, data}) =>{
    
     return (
         <div className = "prducts">
@@ -21,4 +21,4 @@ const imtemList = (({onAdd, data}) =>{
 })
 
 
-export default imtemList
+export default ItemList

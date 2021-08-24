@@ -5,11 +5,8 @@
     "artista": "Pink Floyd",
     "precio": "3000",
     "img": "https://img.discogs.com/lobz3kQRE_tMyg8NKKebxN9UnXo=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9431705-1480968179-9837.jpeg.jpg",
-    "track":[{"A1": "Pigs On The Wing (Part One)"},
-            {"A2": "Dogs"},
-            {"B1": "Pigs (Three Different Ones)"},
-            {"B2": "Sheep"},
-            {"B3": "Pigs On The Wing (Part Two)"}]
+    "ladoA": "Pigs On The Wing (Part One) Dogs",
+    "ladoB": "Pigs (Three Different Ones) Sheep Pigs On The Wing (Part Two)"             
   },
   {
     "id": "2",
