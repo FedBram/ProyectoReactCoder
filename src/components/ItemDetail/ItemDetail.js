@@ -7,7 +7,6 @@ const ItemDetail = (({dataDetail}) => {
 
     return (
         <React.Fragment>
-        <h1>Vsta de ItemDetail</h1>
         <div className = "item">
             <div className = 'item__img'>
                 <img src = {dataDetail.img} alt = {dataDetail.titulo}/>
@@ -16,7 +15,9 @@ const ItemDetail = (({dataDetail}) => {
                 <h2>{dataDetail.artista} - {dataDetail.titulo}</h2>
                 <div className = 'item__info__track'>
                     <h5>TRACKLIST</h5>
-                    <span>{dataDetail.ladoA}</span>
+                    <h6>LADO A</h6>
+                    <span>{dataDetail.tracksA}</span>
+                    <h6>LADO B</h6>
                     <span>{dataDetail.ladoB}</span>
                 </div>
                 <div>

@@ -1,5 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import "./NavBar.scss"
+
+//COMPONENTS
 import CartWidget from "./../CartWidget/CartWidget"
 
 const NavBar = () => {
@@ -9,7 +12,7 @@ const NavBar = () => {
                 <div className="nav__head">
                     <div className="nav__head__logo">
                         {/* <img src="" alt="LOGO"/> */}
-                        <h2>Vinyl Record Store</h2>
+                        <Link to = '/'>Vinyl Record Store</Link>
                     </div>
                     <form className="nav__head__srchBar">
                         <input type="seach" placeholder="Que andas buscando"/>
@@ -20,12 +23,12 @@ const NavBar = () => {
                 </div>
                 <div className="nav__menu">
                     <ul className="nav__menu__main">
-                        <li className="nav__menu__main__li"><a href=".." className="nav__menu__main__li--borde">Inicio</a></li>
-                        <li className="nav__menu__main__li nav__menu__main__li--subDisp"><a href="..">Vinilos</a>
+                        <li className="nav__menu__main__li"><Link to = '/' className="nav__menu__main__li--borde">Inicio</Link></li>
+                        <li className="nav__menu__main__li nav__menu__main__li--subDisp"><Link to = '/'>Vinilos</Link>
                             <ul className="nav__menu__main__submenu">
-                                <li><a href="..">Rock/Pop</a></li>
-                                <li><a href="..">Nacional</a></li>
-                                <li><a href="..">Jazz</a></li>                            
+                                <li><Link to = '/category/Nacional'>Rock/Pop</Link></li>
+                                <li><Link to = '/category/Rock'>Nacional</Link></li>
+                                <li><Link to = '/category/Jazz'>Jazz</Link></li>                            
                             </ul>
                         </li>
                         <li className="nav__menu__main__li"><a href="..">Boxsets</a></li>
