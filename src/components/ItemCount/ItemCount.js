@@ -1,15 +1,19 @@
-import React from "react"
+import React, {useState} from 'react';
 import "./ItemCount.scss"
 
 
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [number, setNumber] = React.useState(Number(initial));
+    const [number, setNumber] = useState(Number(initial));
+
+    const handleCounter = (e) => {setNumber(e.target.value)}
+
+    const handleClick = () => {onAdd(number)}
 
     const increase = () => {
         if (number < stock){
-            setNumber(number + 1 )
+            setNumber(number +1 )
         }
     }
 
@@ -23,9 +27,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
     return(
         <div className = "counter">
             <button className = "counter__btnLess" onClick = {decrease}>-</button>                       
-            <input className = "counter__input" type = "text" placeholder = {number} readOnly="readOnly"/>
+            <input className = "counter__input" type = "text" onChange = {handleCounter} value = {number} readOnly = "readOnly"/>
             <button className = "counter__btnMore" onClick = {increase}>+</button> 
-            <button className = "counter__btnAdd" onClick = {onAdd}>Agregar al carrito</button>        
+            <button type="submit" className = "counter__btnAdd" onClick = {handleClick}>AGREGAR AL CARRITO</button>        
         </div>
     )
 }

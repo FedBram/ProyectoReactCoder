@@ -1,9 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import './ItemDetail.scss';
 
-
+//COMPONENTS
+import ItemCount from '../ItemCount/ItemCount';
+    
 
 const ItemDetail = (({dataDetail}) => {
+
+    const [productsQuantity, setProductsQuantity] = useState(Number());
+    const [finish, setFinish] = useState(false)
+
+    //EVENTO OnAdd
+    const onAdd = quantityToAdd => {
+        setProductsQuantity(Number(quantityToAdd));
+        if (quantityToAdd >= 1){
+            console.log('Cantidad de productos agregados:', quantityToAdd)
+            setFinish(true)
+        }
+    }
+    console.log('Cantidad de productos agregados:',productsQuantity)
 
     return (
         <React.Fragment>
@@ -23,6 +39,11 @@ const ItemDetail = (({dataDetail}) => {
                 <div>
                     <p>${dataDetail.precio}</p>
                 </div>
+                {finish ? 
+                    <button className = "item__btnFinish"><Link to = "/cart">FINALIZAR COMPRA</Link></button> 
+                    : 
+                    <ItemCount stock = {dataDetail.stock} initial = {0} onAdd = {onAdd} />
+                }                
             </div>
         </div>
         </React.Fragment>

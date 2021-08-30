@@ -5,7 +5,7 @@
   align-items: center;
   margin: 0px 10px;
   width: 140px;
-  height: 330px;
+  height: 300px;
   text-align: center;
   img {
     width: 100%;
@@ -16,5 +16,25 @@
   }
   p {
     font-size: 1em;
+  }
+
+  .products__cards__elements__link {
+    height: 35px;
+    width: 130px;
+    background-color: #000;
+    border-radius: 10px;
+    border: 2px solid #000;
+    :hover {
+      background-color: #fff;
+      color: #000;
+    }
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      padding-top: 3.5px;
+      border-radius: 10px;
+      color: #fff;
+    }
   }
 }
