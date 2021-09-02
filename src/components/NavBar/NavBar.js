@@ -26,8 +26,8 @@ const NavBar = () => {
                         <li className="nav__menu__main__li"><Link to = '/' className="nav__menu__main__li--borde">Inicio</Link></li>
                         <li className="nav__menu__main__li nav__menu__main__li--subDisp"><Link to = '/'>Vinilos</Link>
                             <ul className="nav__menu__main__submenu">
-                                <li><Link to = '/category/Nacional'>Rock/Pop</Link></li>
-                                <li><Link to = '/category/Rock'>Nacional</Link></li>
+                                <li><Link to = '/category/Rock'>Rock/Pop</Link></li>
+                                <li><Link to = '/category/Nacional'>Nacional</Link></li>
                                 <li><Link to = '/category/Jazz'>Jazz</Link></li>                            
                             </ul>
                         </li>

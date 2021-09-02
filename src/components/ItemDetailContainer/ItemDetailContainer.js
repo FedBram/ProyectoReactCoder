@@ -13,7 +13,7 @@ const ItemDetailContainer = (() => {
     const [loaded, setLoaded] = useState(false)
 
     const {itemId} = useParams()
-    
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -22,11 +22,14 @@ const ItemDetailContainer = (() => {
                 ).then((res) => setDataDetail(res.data.find( e => e.id === itemId)))
                 .finally(setLoaded(true))
         }, 2000)
-    }, [])
+    }, [itemId])
     
     return (
         <div>
-            {loaded ? <ItemDetail dataDetail = {dataDetail} /> : <Spinner />}
+            {loaded ? 
+                <ItemDetail dataDetail = {dataDetail} /> 
+                : 
+                <Spinner />}
         </div>
     )
 })

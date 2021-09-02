@@ -22,18 +22,12 @@ const ItemListContainer = ( {titulo} ) => {
             .finally(setLoaded(true))
         }, 1000);
     }, [categoryId])
-    console.log('Data', data)
-
-    //EVENTO OnAdd
-    const onAdd = () => {
-        console.log('Item agregado al carrito')
-    }
 
 
     return (
         <div>
         <h1 className='title'> {titulo} </h1>
-        {loaded ? <ItemList onAdd = {onAdd} data = {data} /> : <Spinner/> }
+        {loaded ? <ItemList data = {data} /> : <Spinner/> }
         
         </div>
     )

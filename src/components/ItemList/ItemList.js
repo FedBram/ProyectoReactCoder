@@ -5,7 +5,7 @@ import './ItemList.scss'
 import Item from '../Item/Item'
 
 
-const ItemList = (({onAdd, data}) =>{
+const ItemList = (({ data }) =>{
    
     return (
         <div className = "prducts">
@@ -13,7 +13,7 @@ const ItemList = (({onAdd, data}) =>{
             <div className = "products__cards">            
                 {data.map( (e) => {
                     return (
-                        <Item onAdd = {onAdd} data = {e} key = {e.id} />
+                        <Item data = {e} key = {e.id} />
                     )
                 })}              
             </div>
