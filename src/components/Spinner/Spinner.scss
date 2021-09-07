@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .divSpinner {
   display: flex;
   flex-flow: row wrap;
@@ -24,3 +25,31 @@
     transform: rotate(360deg);
   }
 }
+=======
+.divSpinner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-left-color: rgb(0, 0, 0);
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+>>>>>>> c56e865766192ede4de5dcd15a5176cbcfb8c715

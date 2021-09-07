@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import "./Cart.scss";
@@ -62,4 +63,13 @@ const Cart = () => {
 }
 
 
+=======
+const Cart = () => {
+    return (
+        <h1>COMPONENTE CART</h1>
+    )
+}
+
+
+>>>>>>> c56e865766192ede4de5dcd15a5176cbcfb8c715
 export default Cart

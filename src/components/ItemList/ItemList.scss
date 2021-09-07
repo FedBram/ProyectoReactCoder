@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 a {
   text-decoration: none;
   color: #000;
@@ -21,3 +22,28 @@ a {
   justify-content: center;
   margin: 40px 15%;
 }
+=======
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.products {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 60px 50px;
+}
+
+.products__title {
+  text-align: center;
+  font-size: 2.2em;
+}
+
+.products__cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 40px 15%;
+}
+>>>>>>> c56e865766192ede4de5dcd15a5176cbcfb8c715
