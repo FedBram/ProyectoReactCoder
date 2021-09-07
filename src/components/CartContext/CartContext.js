@@ -24,28 +24,16 @@ export const CartProvider = ({children}) => {
 
     //FUNCION PARA AGREGAR ITEM AL CARRITO
 
-<<<<<<< HEAD
     const agregarCarrito = ((item, quantity, precioT) => {
         if(isInCart(item.id)){
             const carritoRefresh = carrito.map((e) => {
                 if(e.id === item.id) {
                     return {...e, quantity: e.quantity + quantity, precioT: Number((precioT * quantity) + e.precioT)};
-=======
-    const agregarCarrito = ((item, quantity) => {
-        if(isInCart(item.id)){
-            const carritoRefresh = carrito.map((e) => {
-                if(e.id === item.id) {
-                    return {...e, quantity: e.quantity + quantity};
->>>>>>> c56e865766192ede4de5dcd15a5176cbcfb8c715
                 }else {return e};
             });
             setCarrito(carritoRefresh);
         }else {
-<<<<<<< HEAD
             setCarrito( (prev) => [...prev, {...item, quantity, precioT: Number(precioT * quantity)}]);
-=======
-            setCarrito( (prev) => [...prev, {...item, quantity}]);
->>>>>>> c56e865766192ede4de5dcd15a5176cbcfb8c715
         }
     });
 
@@ -60,7 +48,6 @@ export const CartProvider = ({children}) => {
 
     const quitarTodo = () => setCarrito([]);
 
-<<<<<<< HEAD
     //CANTIDAD TOTAL EN CARRITO
 
     const totalQuantity = carrito.reduce((acc,i) => {
@@ -78,10 +65,6 @@ export const CartProvider = ({children}) => {
 
     return (
         <CartContext.Provider value = {{carrito, agregarCarrito, quitarTodo, quitarItem, totalQuantity, totalPrice}}>
-=======
-    return (
-        <CartContext.Provider value = {{carrito, agregarCarrito, quitarTodo, quitarItem}}>
->>>>>>> c56e865766192ede4de5dcd15a5176cbcfb8c715
             {children}
         </CartContext.Provider>
     )
