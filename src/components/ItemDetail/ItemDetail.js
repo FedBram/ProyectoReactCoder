@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ItemDetail.scss';
 
 //COMPONENTS
@@ -10,7 +10,7 @@ import { CartContext } from '../CartContext/CartContext';
 const ItemDetail = (({dataDetail}) => {
 
     const [productsQuantity, setProductsQuantity] = useState(Number());
-    // const [finish, setFinish] = useState(false)
+    const [finish, setFinish] = useState(false)
 
     const {agregarCarrito, quitarItem, quitarTodo} = useContext(CartContext)
 
@@ -18,20 +18,21 @@ const ItemDetail = (({dataDetail}) => {
     const onAdd = quantityToAdd => {
         setProductsQuantity(Number(quantityToAdd));
         if (quantityToAdd >= 1 && dataDetail.stock !== 0){
-            agregarCarrito(dataDetail, quantityToAdd)
-            // setFinish(true)
+            agregarCarrito(dataDetail, Number(quantityToAdd), Number(dataDetail.precio))
+            console.log('precio', Number(dataDetail.precio))
+            setFinish(true)
         }else {
             console.log('NO QUEDAN MAS PRODUCTOS EN STOCK PARA AGREGAR')
         }
     }
 
-    const borrarItem = () => {
-        quitarItem(dataDetail.id)
-    }
+    // const borrarItem = () => {
+    //     quitarItem(dataDetail.id)
+    // }
 
-    const clear = () => {
-        quitarTodo()
-    }
+    // const clear = () => {
+    //     quitarTodo()
+    // }
 
 
     return (
@@ -52,13 +53,13 @@ const ItemDetail = (({dataDetail}) => {
                 <div>
                     <p>${dataDetail.precio}</p>
                 </div>
-                {/* {finish ?  */}
-                    {/* <button className = "item__btnFinish"><Link to = "/cart">FINALIZAR COMPRA</Link></button> 
-                    :  */}
+                {finish ? 
+                    <button className = "item__btnFinish"><Link to = "/cart">FINALIZAR COMPRA</Link></button> 
+                    : 
                     <ItemCount stock = {dataDetail.stock} initial = {1} onAdd = {onAdd} />
-                {/* } */}
-                <button onClick = {borrarItem} className="btnDelete">Eliminar</button>     
-                <button onClick = {clear} className='btnClear'>Borrar todo</button>           
+                }
+                {/* <button onClick = {borrarItem} className="btnDelete">Eliminar</button>     
+                <button onClick = {clear} className='btnClear'>Borrar todo</button>            */}
             </div>
         </div>
         </React.Fragment>
