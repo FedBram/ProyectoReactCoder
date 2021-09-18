@@ -14,7 +14,7 @@ const CartWidget = () => {
     return (
         <div className = "inconDiv">
             <Link to = {'/cart'}><img src = { carritoImg } alt = "Carrito de compras"/></Link>
-            {carrito.length != 0 ? <span>{totalQuantity}</span> : <div></div>}
+            {carrito.length !== 0 ? <span>{totalQuantity}</span> : <div></div>}
         </div>
     )
 };

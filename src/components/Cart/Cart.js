@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import "./Cart.scss";
 
+//FIREBASE
+import { db } from '../../firebase'
+
 //COMPONENTS
 import { CartContext } from "../CartContext/CartContext";
 
@@ -9,8 +12,18 @@ import { CartContext } from "../CartContext/CartContext";
 const Cart = () => {
     const { carrito, quitarItem, quitarTodo, totalPrice } = useContext(CartContext)
 
+    const buyOrder =  (e) => {
+        const buyer = {
+            name:'',
+            phone:'',
+            email:'',
+            item: carrito
+        };
+        // await db.collection('compras').doc().set(buyOrder);
+        console.log(buyer)
+    };
 
-
+    buyOrder()
     return (
         <>
         <div className="carrito">
@@ -20,7 +33,7 @@ const Cart = () => {
                 <h5 className="carrito__description__cant">CANTIDAD</h5>
                 <h5 className="carrito__description__precio">SUBTOTAL</h5>
             </div>   
-        {carrito.length == 0 ?
+        {carrito.length === 0 ?
             <>
             <p className="carrito__vacio">EL CARRITO SE ENCUENTRA VACIO</p> 
             <div className="carrito__vacio__btn"><Link to = {'/'}>VER CATALOGO</Link></div>
@@ -31,11 +44,11 @@ const Cart = () => {
                     quitarItem(item.id)
                 }
                 return (                
-                    <div className="carrito__cards">
+                    <div className="carrito__cards" key={item.id}>
                         <div className="carrito__cards__elements">
                             <Link to = {`/item/${item.id}`} className="carrito__cards__elements__img">
                             {/* <div className="carrito__cards__elements__img"> */}
-                                <img src={item.img}/>
+                                <img src={item.img} alt={item.titulo}/>
                             {/* </div> */}
                             </Link>
                             <div className="carrito__cards__elements__txt">
