@@ -19,7 +19,6 @@ const ItemDetail = (({dataDetail}) => {
         setProductsQuantity(Number(quantityToAdd));
         if (quantityToAdd >= 1 && dataDetail.stock !== 0){
             agregarCarrito(dataDetail, Number(quantityToAdd), Number(dataDetail.precio))
-            console.log('precio', Number(dataDetail.precio))
             setFinish(true)
         }else {
             console.log('NO QUEDAN MAS PRODUCTOS EN STOCK PARA AGREGAR')

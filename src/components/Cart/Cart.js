@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import "./Cart.scss";
 
-//FIREBASE
-import { db } from '../../firebase'
+
 
 //COMPONENTS
 import { CartContext } from "../CartContext/CartContext";
@@ -12,18 +11,6 @@ import { CartContext } from "../CartContext/CartContext";
 const Cart = () => {
     const { carrito, quitarItem, quitarTodo, totalPrice } = useContext(CartContext)
 
-    const buyOrder = (e) => {
-        const buyer = {
-            name:'',
-            phone:'',
-            email:'',
-            item: carrito
-        };
-        // await db.collection('compras').doc().set(buyOrder);
-        console.log(buyer)
-    };
-
-    buyOrder()
     return (
         <>
         <div className="carrito">
@@ -66,12 +53,13 @@ const Cart = () => {
                 {carrito.length === 0 ? <> </> : 
                 <>
                 <button onClick={quitarTodo} className="carrito__total__btnClear">LIMPIAR CARRITO</button>
-                <div className="carrito__total__btnBuy"><Link to = {'/form'}>REALIZAR COMPRA</Link></div>
-                </>}
                 <div>
                 <span className="carrito__total__title">TOTAL</span>
                 <span className="carrito__total__number">${totalPrice}</span>
                 </div>
+                <div className="carrito__total__btnBuy"><Link to = {'/form'}>REALIZAR COMPRA</Link></div>
+                </>}
+
             </div>
         </div>
         </>

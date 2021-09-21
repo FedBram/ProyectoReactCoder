@@ -16,7 +16,6 @@ export const CartProvider = ({children}) => {
         localStorage.setItem('carrito',JSON.stringify(carrito))  
     }, [carrito])
 
-    console.log("productos en carrito:", carrito);
 
     //VERIFICA SI EL ITEM YA SE ENCUENTRA EN EL CARRITO
 
