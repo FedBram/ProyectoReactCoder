@@ -8,6 +8,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import {CartProvider} from './components/CartContext/CartContext'
+import Form from './components/Form/Form';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
               </Route>
               <Route path = '/cart'>
                 <Cart />
+              </Route>
+              <Route path = '/form'>
+                <Form />
               </Route>
             </Switch>
           </main>

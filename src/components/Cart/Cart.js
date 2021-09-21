@@ -12,7 +12,7 @@ import { CartContext } from "../CartContext/CartContext";
 const Cart = () => {
     const { carrito, quitarItem, quitarTodo, totalPrice } = useContext(CartContext)
 
-    const buyOrder =  (e) => {
+    const buyOrder = (e) => {
         const buyer = {
             name:'',
             phone:'',
@@ -63,7 +63,11 @@ const Cart = () => {
                 )
             })}           
             <div className="carrito__total">
+                {carrito.length === 0 ? <> </> : 
+                <>
                 <button onClick={quitarTodo} className="carrito__total__btnClear">LIMPIAR CARRITO</button>
+                <div className="carrito__total__btnBuy"><Link to = {'/form'}>REALIZAR COMPRA</Link></div>
+                </>}
                 <div>
                 <span className="carrito__total__title">TOTAL</span>
                 <span className="carrito__total__number">${totalPrice}</span>
