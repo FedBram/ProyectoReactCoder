@@ -12,7 +12,7 @@ const ItemDetail = (({dataDetail}) => {
     const [productsQuantity, setProductsQuantity] = useState(Number());
     const [finish, setFinish] = useState(false)
 
-    const {agregarCarrito, quitarItem, quitarTodo} = useContext(CartContext)
+    const {agregarCarrito} = useContext(CartContext)
 
     //EVENTO OnAdd
     const onAdd = quantityToAdd => {

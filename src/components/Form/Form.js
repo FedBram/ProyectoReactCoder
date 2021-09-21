@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 
 //FIREBASE
 import { db } from '../../firebase'
@@ -7,9 +7,12 @@ import { db } from '../../firebase'
 import { CartContext } from "../CartContext/CartContext";
 
 const Form = () => {
-    const { carrito, quitarTodo } = useContext(CartContext)
+    const { carrito, quitarTodo, totalPrice } = useContext(CartContext)
 
-    // const [buyer, setBuyer] = useState({})
+    const items = carrito.map ((e) => {
+        const i = {id: e.id, title: e.titulo, price: e.precio}
+        return i
+    })
 
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -26,21 +29,20 @@ const Form = () => {
     }
 
     const buyOrder = async () => {
-        const buyer = {
-            name: name,
-            phone: phone,
-            email: mail,
-            item: carrito,
+        const order = {
+            buyer: {name: name, phone: phone,  email: mail},
+            items: items, total: totalPrice
         };
-        await db.collection('compras').doc().set(buyer);
-
+        await db.collection('compras').doc().set(order);
+        console.log(order)
         const docs = [];
         db.collection('compras').onSnapshot( (querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id: doc.id})
-            })
-            alert(`Tu orden de compra es ${docs.pop().id}`)
+            })       
+        // alert(`Tu orden de compra es ${docs.pop().id}`)     
         })
+
     };
 
     const handleOnSubmit = (e) => {
