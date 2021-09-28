@@ -1,5 +1,5 @@
 // import axios from 'axios';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {useParams} from 'react-router-dom';
 
 //FIREBASE
@@ -8,6 +8,7 @@ import { db } from '../../firebase'
 // import { db } from '../../firebase';
 
 //COMPONENTS
+// import { CartContext } from '../CartContext/CartContext';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Spinner from '../Spinner/Spinner';
 
@@ -16,6 +17,8 @@ const ItemDetailContainer = (() => {
 
     const [dataDetail, setDataDetail] = useState([])
     const [loaded, setLoaded] = useState(false)
+
+    // const {newStock} = useContext(CartContext)
 
     const {itemId} = useParams()
 
@@ -51,10 +54,16 @@ const ItemDetailContainer = (() => {
         }, 2000)
     }, [itemId])
     
+
+    const setNewStock = ( async (item, quantityToAdd,id) => {
+       const newStock = {...item, cartStock: item.cartStock - quantityToAdd}
+       await db.collection('vinyls').doc(id).set(newStock);
+    })
+
     return (
         <div>
             {loaded ? 
-                <ItemDetail dataDetail = {dataDetail} /> 
+                <ItemDetail dataDetail = {dataDetail} setNewStock = {setNewStock} /> 
                 : 
                 <Spinner />}
                 {/* <ItemDetail dataDetail = {dataDetail} />  */}

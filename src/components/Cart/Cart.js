@@ -26,10 +26,12 @@ const Cart = () => {
             <div className="carrito__vacio__btn"><Link to = {'/'}>VER CATALOGO</Link></div>
             </>
             : carrito.map((item) => {
+
                 //ELIMINAR UN ITEM DEL CARRITO
                 const borrarItem = () => {
-                    quitarItem(item.id)
+                    quitarItem(item, item.id)
                 }
+
                 return (                
                     <div className="carrito__cards" key={item.id}>
                         <div className="carrito__cards__elements">

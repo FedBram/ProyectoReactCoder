@@ -7,7 +7,7 @@ import { db } from '../../firebase'
 import { CartContext } from "../CartContext/CartContext";
 
 const Form = () => {
-    const { carrito, quitarTodo, totalPrice } = useContext(CartContext)
+    const { carrito, finalClean, totalPrice } = useContext(CartContext)
 
     const items = carrito.map ((e) => {
         const i = {id: e.id, title: e.titulo, price: e.precio}
@@ -40,15 +40,33 @@ const Form = () => {
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id: doc.id})
             })       
-        // alert(`Tu orden de compra es ${docs.pop().id}`)     
+        alert(`Tu orden de compra es ${docs.pop().id}`)     
         })
-
     };
+
+    const setFinalStock = async () => {
+        carrito.map( async (item) => {
+            const finalStocks = {
+                artista: item.artista, 
+                cartStock: item.cartStock, 
+                cat: item.cat, 
+                img: item.img, 
+                ladoB: item.ladoB, 
+                precio: item.precio, 
+                stock:item.cartStock, 
+                titulo:item.titulo, 
+                tracksA: item.tracksA}
+
+            await db.collection('vinyls').doc(item.id).set(finalStocks);   
+        })     
+    }
+
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
         buyOrder()
-        quitarTodo()
+        setFinalStock()
+        finalClean()
         setName('')
         setPhone('')
         setMail('')

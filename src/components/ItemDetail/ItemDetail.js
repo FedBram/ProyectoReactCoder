@@ -7,18 +7,20 @@ import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../CartContext/CartContext';
     
 
-const ItemDetail = (({dataDetail}) => {
+const ItemDetail = (({dataDetail, setNewStock}) => {
 
     const [productsQuantity, setProductsQuantity] = useState(Number());
     const [finish, setFinish] = useState(false)
 
-    const {agregarCarrito} = useContext(CartContext)
+    const {agregarCarrito, newStock} = useContext(CartContext)
 
     //EVENTO OnAdd
     const onAdd = quantityToAdd => {
         setProductsQuantity(Number(quantityToAdd));
-        if (quantityToAdd >= 1 && dataDetail.stock !== 0){
-            agregarCarrito(dataDetail, Number(quantityToAdd), Number(dataDetail.precio))
+        if (quantityToAdd >= 1 && dataDetail.cartStock !== 0){
+            agregarCarrito(dataDetail, Number(quantityToAdd), Number(dataDetail.precio), Number(dataDetail.cartStock))
+            // newStock(dataDetail.id)
+            setNewStock (dataDetail, quantityToAdd, dataDetail.id)
             setFinish(true)
         }else {
             console.log('NO QUEDAN MAS PRODUCTOS EN STOCK PARA AGREGAR')
@@ -54,8 +56,8 @@ const ItemDetail = (({dataDetail}) => {
                 </div>
                 {finish ? 
                     <button className = "item__btnFinish"><Link to = "/cart">FINALIZAR COMPRA</Link></button> 
-                    : 
-                    <ItemCount stock = {dataDetail.stock} initial = {1} onAdd = {onAdd} />
+                    :
+                    <ItemCount stock = {dataDetail.cartStock} initial = {1} onAdd = {onAdd} />
                 }
                 {/* <button onClick = {borrarItem} className="btnDelete">Eliminar</button>     
                 <button onClick = {clear} className='btnClear'>Borrar todo</button>            */}
