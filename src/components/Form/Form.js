@@ -8,6 +8,8 @@ import { CartContext } from "../CartContext/CartContext";
 
 const Form = () => {
     const { carrito, finalClean, totalPrice } = useContext(CartContext)
+    const [finish, setFinish] = useState(false)
+    const [orderNum, setOrderNum] = useState()
 
     const items = carrito.map ((e) => {
         const i = {id: e.id, title: e.titulo, price: e.precio}
@@ -40,7 +42,7 @@ const Form = () => {
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id: doc.id})
             })       
-        alert(`Tu orden de compra es ${docs.pop().id}`)     
+            setOrderNum(docs.pop().id)     
         })
     };
 
@@ -70,15 +72,15 @@ const Form = () => {
         setName('')
         setPhone('')
         setMail('')
+        setFinish(true)
     }
 
-    // useEffect(() => {
-    //     getBuyer()
-    // }, [])
 
     return (
         <>
-            <form onSubmit={handleOnSubmit}>
+            {finish? <div><p>Gracias por su compra. Su codigo de orden es {orderNum}</p></div> 
+            : 
+                <form onSubmit={handleOnSubmit}>
                 <div>
                     <label htmlFor='name'>NOMBRE:</label>
                     <input type='text' name='name' id='name' value={name} onChange={handleOnChange}/>
@@ -92,10 +94,9 @@ const Form = () => {
                     <input type='email' name='mail' id='mail' value={mail} onChange={handleOnChange}/>
                 </div>
                 <button type='submit'>COMPRAR</button>
-            </form>
+            </form>}           
         </>
     )
-
 }
 
 

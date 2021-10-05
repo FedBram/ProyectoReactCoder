@@ -14,12 +14,12 @@ const NavBar = () => {
                         {/* <img src="" alt="LOGO"/> */}
                         <Link to = '/'>Vinyl Record Store</Link>
                     </div>
-                    <form className="nav__head__srchBar">
+                    {/* <form className="nav__head__srchBar">
                         <input type="seach" placeholder="Que andas buscando"/>
                         <div className="nav__head__srchBar__btn">
                         <button type="submit">Buscar</button>
                         </div>
-                    </form>
+                    </form> */}
                 </div>
                 <div className="nav__menu">
                     <ul className="nav__menu__main">

@@ -32,29 +32,30 @@ const Cart = () => {
                     quitarItem(item, item.id)
                 }
 
-                return (                
-                    <div className="carrito__cards" key={item.id}>
-                        <div className="carrito__cards__elements">
-                            <Link to = {`/item/${item.id}`} className="carrito__cards__elements__img">
-                            {/* <div className="carrito__cards__elements__img"> */}
-                                <img src={item.img} alt={item.titulo}/>
-                            {/* </div> */}
-                            </Link>
-                            <div className="carrito__cards__elements__txt">
-                                <h6>{item.titulo}</h6>
-                                <p>{item.artista}</p>
+                return (         
+                        <div className="carrito__cards" key={item.id}>
+                            <div className="carrito__cards__elements">
+                                <Link to = {`/item/${item.id}`} className="carrito__cards__elements__img">
+                                {/* <div className="carrito__cards__elements__img"> */}
+                                    <img src={item.img} alt={item.titulo}/>
+                                {/* </div> */}
+                                </Link>
+                                <div className="carrito__cards__elements__txt">
+                                    <h6>{item.titulo}</h6>
+                                    <p>{item.artista}</p>
+                                </div>
+                                <p className="carrito__cards__elements__amount">{item.quantity}</p>
+                                <p className="carrito__cards__elements__price">${item.precioT}</p>
+                                <button className="carrito__cards__elements__btnRemove" onClick={borrarItem}>X</button>
                             </div>
-                            <p className="carrito__cards__elements__amount">{item.quantity}</p>
-                            <p className="carrito__cards__elements__price">${item.precioT}</p>
-                            <button className="carrito__cards__elements__btnRemove" onClick={borrarItem}>X</button>
-                        </div>
-                    </div>                
+                        </div>           
                 )
-            })}           
+            })}
+            <button onClick={quitarTodo} className="carrito__total__btnClear">LIMPIAR CARRITO</button>        
             <div className="carrito__total">
                 {carrito.length === 0 ? <> </> : 
                 <>
-                <button onClick={quitarTodo} className="carrito__total__btnClear">LIMPIAR CARRITO</button>
+
                 <div>
                 <span className="carrito__total__title">TOTAL</span>
                 <span className="carrito__total__number">${totalPrice}</span>
